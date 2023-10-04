@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import imgCellphone from '../../assets/illustration-phones.svg';
+---
+
+<main>
+    <div class="container wrap">
+        <div class="img">
+            <Image src={imgCellphone} alt="two cellphones" />
+        </div>
+        <section>
+            <h1>State of the Art Infrastructure</h1>
+            <p>
+                With reliability and speed in mind, worldwide data centers
+                provide the backbone for ultra-fast connectivity. This ensures
+                your site will load instantly, no matter where your readers are,
+                keeping your site competitive.
+            </p>
+        </section>
+    </div>
+</main>
+
+<style>
+    main {
+        background: url('../../assets/bg-pattern-circles.svg'),
+            linear-gradient(
+                to bottom right,
+                var(--very-dark-blue) 40%,
+                var(--desaturated-blue)
+            );
+        background-position: 50% 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 7rem;
+        border-bottom-left-radius: 80px;
+        border-top-right-radius: 80px;
+    }
+
+    .wrap {
+        transform: translateY(-25%);
+    }
+
+    img {
+        height: 100%;
+    }
+
+    section {
+        color: white;
+        text-align: center;
+        padding-inline: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    @media (min-width: 900px) {
+        main {
+            background-position: -50% 80%;
+            background-size: auto;
+            background-repeat: no-repeat;
+            margin-top: 3rem;
+            border-bottom-left-radius: 80px;
+            border-top-right-radius: 80px;
+        }
+
+        .wrap {
+            display: flex;
+            align-items: center;
+            transform: translateY(0);
+            max-height: 400px;
+        }
+
+        .img {
+            width: 50%;
+        }
+
+        section {
+            width: 50%;
+            text-align: start;
+            text-wrap: balance;
+        }
+    }
+</style>
