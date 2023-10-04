@@ -1,0 +1,54 @@
+<section>
+    <div class="row-1">
+        <h2>Introducing an extensible editor</h2>
+        <p>
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+        </p>
+    </div>
+    <div class="row-2">
+        <h2>Robust content management</h2>
+        <p>
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you’re in full control.
+        </p>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 900px) {
+        section {
+            text-align: start;
+            width: 50%;
+            margin-top: 5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (min-width: 950px) {
+        section {
+            margin-top: 0;
+        }
+    }
+</style>

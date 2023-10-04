@@ -1,6 +1,5 @@
 ---
 import Button from '../../components/Button.astro';
-import bgMobile from '../assets/bg-pattern-intro-mobile.svg';
 import Navbar from './Navbar.astro';
 ---
 
@@ -36,7 +35,7 @@ import Navbar from './Navbar.astro';
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
-        border-bottom-left-radius: 20%;
+        border-bottom-left-radius: 70px;
     }
 
     .header {
@@ -56,5 +55,19 @@ import Navbar from './Navbar.astro';
         justify-content: center;
         gap: 1rem;
         margin-top: 3rem;
+    }
+
+    @media (min-width: 800px) {
+        main {
+            background: url('../../assets/bg-pattern-intro-desktop.svg'),
+                linear-gradient(
+                    to bottom right,
+                    var(--light-red) 30%,
+                    var(--red)
+                );
+            background-size: cover;
+            background-position: 0;
+            background-repeat: no-repeat;
+        }
     }
 </style>

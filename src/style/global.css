@@ -35,6 +35,7 @@ body {
   font-weight: 400;
   display: grid;
   align-items: center;
+  line-height: 1.6;
 }
 
 a {

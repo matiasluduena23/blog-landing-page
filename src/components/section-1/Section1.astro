@@ -1,0 +1,49 @@
+---
+import SectionColText from './SectionColText.astro';
+import imgDesktop from '../../assets/illustration-editor-desktop.svg';
+import imgMobile from '../../assets/illustration-editor-mobile.svg';
+---
+
+<main>
+    <h1>Designed for the future</h1>
+    <section class="container">
+        <div class="img">
+            <picture>
+                <source srcset={imgDesktop.src} media="(min-width: 900px)" />
+                <img src={imgMobile.src} alt="desktop illustration" />
+            </picture>
+        </div>
+        <SectionColText />
+    </section>
+</main>
+
+<style>
+    main {
+        margin-block: 5rem;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .img {
+        margin-block: 2rem;
+    }
+
+    @media (min-width: 900px) {
+        section {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .img {
+            width: 50%;
+            transform: translateX(30%) scale(130%);
+        }
+    }
+
+    @media (min-width: 1250px) {
+        .img {
+            transform: translateX(45%) scale(155%);
+        }
+    }
+</style>
