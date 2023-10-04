@@ -1,0 +1,51 @@
+---
+const { items, id } = Astro.props;
+---
+
+<ul class="float-items" id={id}>
+    {
+        items.map((item: string) => (
+            <li role="none">
+                <a role="menuitem" href="#">
+                    {item}
+                </a>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    .float-items {
+        position: absolute;
+        left: 0;
+        top: 30px;
+        background-color: white;
+        padding: 1rem;
+        width: 130px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    li {
+        margin-bottom: 0.7rem;
+    }
+
+    a {
+        color: black;
+    }
+
+    a:hover {
+        font-weight: 600;
+    }
+
+    @media (max-width: 765px) {
+        .float-items {
+            position: static;
+            background-color: var(--medium-gray);
+            text-align: center;
+            width: 80%;
+            margin-inline: auto;
+            margin-top: 1rem;
+        }
+    }
+</style>

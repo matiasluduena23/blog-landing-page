@@ -1,0 +1,56 @@
+---
+import arrowLight from '../../assets/icon-arrow-light.svg';
+import arrowDark from '../../assets/icon-arrow-dark.svg';
+import { Image } from 'astro:assets';
+
+const { text, ariaControl } = Astro.props;
+---
+
+<a
+    class="nav-item-left"
+    href="#"
+    aria-expanded="false"
+    aria-controls={ariaControl}
+    >{text}
+    <span>
+        <picture class="grid-item">
+            <source srcset={arrowLight.src} media="(min-width: 765px)" />
+            <img src={arrowDark.src} alt="arrow icon" />
+        </picture>
+    </span>
+</a>
+
+<style>
+    a {
+        color: white;
+        font-weight: 600;
+    }
+
+    a:hover::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 78%;
+        height: 2px;
+        background-color: white;
+    }
+
+    .nav-item-left[aria-expanded='true'] > span img {
+        transform: rotate(180deg);
+    }
+
+    a span {
+        margin-left: 5px;
+    }
+
+    @media (max-width: 765px) {
+        a {
+            color: black;
+        }
+
+        .nav-item-left[aria-expanded='true'] {
+            color: var(--dark-gray);
+        }
+    }
+</style>

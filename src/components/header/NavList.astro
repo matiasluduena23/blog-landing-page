@@ -1,0 +1,109 @@
+---
+import Button from '../../components/Button.astro';
+import ItemOptions from './ItemOptions.astro';
+import NavLink from './NavLink.astro';
+
+const itemsProduct = [
+    'Overview',
+    'Pricing',
+    'Marketplace',
+    'Features',
+    'Integrations',
+];
+
+const itemsCompany = ['About', 'Team', 'Blog', 'Careers'];
+
+const itemsConnect = ['Contact', 'Newsletter', 'LinkedIn'];
+---
+
+<div class="flex nav-items">
+    <ul class="flex">
+        <li>
+            <NavLink text="Product" ariaControl="menu-product" />
+            <ItemOptions items={itemsProduct} id="menu-product" />
+        </li>
+        <li>
+            <NavLink text="Company" ariaControl="menu-company" />
+            <ItemOptions items={itemsCompany} id="menu-company" />
+        </li>
+        <li>
+            <NavLink text="Connect" ariaControl="menu-connect" />
+            <ItemOptions items={itemsConnect} id="menu-connect" />
+        </li>
+    </ul>
+    <ul class="flex">
+        <li>
+            <a href="#">Login</a>
+        </li>
+        <Button
+            text="Sign Up"
+            bgColor="hsl(356, 100%, 66%)"
+            textColor="white"
+            bgText="white"
+            bgHover="hsl(355, 100%, 74%)"
+        />
+    </ul>
+</div>
+
+<style>
+    .flex {
+        gap: 1.5rem;
+    }
+
+    li {
+        position: relative;
+    }
+
+    a {
+        color: white;
+        font-weight: 600;
+    }
+
+    a:hover::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 78%;
+        height: 2px;
+        background-color: white;
+    }
+
+    @media (max-width: 765px) {
+        .nav-items {
+            display: none;
+            position: absolute;
+            top: 6rem;
+            left: 0;
+            right: 0;
+            width: 90%;
+            margin-inline: auto;
+            height: auto;
+            background: white;
+            border-radius: 5px;
+            padding-block: 2rem;
+            text-align: center;
+        }
+
+        .nav-items ul:last-child {
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .flex {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        ul,
+        li {
+            width: 100%;
+        }
+
+        a {
+            color: black;
+        }
+    }
+</style>

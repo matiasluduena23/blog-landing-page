@@ -1,0 +1,65 @@
+---
+import NavList from './NavList.astro';
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.svg';
+import hamburger from '../../assets/icon-hamburger.svg';
+---
+
+<nav>
+    <div class="container flex">
+        <a class="logo" href="/" aria-label="Go to homepage">
+            <Image src={logo} alt="logo" />
+        </a>
+        <div class="list">
+            <a
+                href="#"
+                class="hamburger"
+                aria-expanded="false"
+                aria-controls="nav-items"
+            >
+                <Image src={hamburger} alt="logo" />
+            </a>
+            <NavList />
+        </div>
+    </div>
+</nav>
+
+<style>
+    nav {
+        padding-block: 2.5rem;
+        position: relative;
+    }
+
+    .flex {
+        justify-content: start;
+        gap: 3rem;
+    }
+
+    .list {
+        flex-grow: 2;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 30px;
+        justify-self: start;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media (max-width: 765px) {
+        .hamburger {
+            display: block;
+        }
+
+        .flex {
+            justify-content: space-between;
+        }
+
+        .list {
+            flex-grow: 0;
+        }
+    }
+</style>

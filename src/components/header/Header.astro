@@ -1,0 +1,60 @@
+---
+import Button from '../../components/Button.astro';
+import bgMobile from '../assets/bg-pattern-intro-mobile.svg';
+import Navbar from './Navbar.astro';
+---
+
+<main>
+    <Navbar />
+    <div class="container header">
+        <h1>A modern publishing platform</h1>
+        <p>Grow your audience and build your online brand</p>
+        <div class="btn-wrap flex">
+            <Button
+                text="Start for Free"
+                bgColor="white"
+                textColor="hsl(356, 100%, 66%)"
+                bgHover="hsl(355, 100%, 74%)"
+            />
+
+            <Button
+                text="Learn More"
+                bgColor="transparent"
+                textColor="white"
+                bgHover="white"
+                bgText="hsl(356, 100%, 66%)"
+            />
+        </div>
+    </div>
+</main>
+
+<style>
+    main {
+        color: white;
+        background: url('../../assets/bg-pattern-intro-mobile.svg'),
+            linear-gradient(to bottom right, var(--light-red) 40%, var(--red));
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        border-bottom-left-radius: 20%;
+    }
+
+    .header {
+        text-align: center;
+        padding: 5rem 0.7rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        margin-block: 1rem;
+    }
+
+    .btn-wrap {
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+</style>

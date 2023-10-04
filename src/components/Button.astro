@@ -1,0 +1,23 @@
+---
+const { text, bgColor, textColor, bgHover, bgText } = Astro.props;
+---
+
+<button>{text}</button>
+
+<style define:vars={{ bgColor, textColor, bgHover, bgText }}>
+    button {
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        border: none;
+        background-color: var(--bgColor);
+        color: var(--textColor);
+        font-weight: 600;
+        font-family: var(--ff);
+        font-size: 16px;
+    }
+
+    button:hover {
+        color: var(--bgText);
+        background-color: var(--bgHover);
+    }
+</style>
