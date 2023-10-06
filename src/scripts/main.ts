@@ -21,3 +21,18 @@ window.addEventListener('resize', () => {
         hambuger?.setAttribute('aria-expanded' ,'false')
     }
 });
+
+const nav = document.querySelector('.nav');
+const header = document.querySelector('.main-header');
+
+const intersectionNavObserver = new IntersectionObserver((entries, intersectionNavObserver)=> {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting){
+            nav?.classList.add('nav-scrolled')
+        }else {
+            nav?.classList.remove('nav-scrolled')
+        }
+    })
+}, {rootMargin: "-300px 0px 0px 0px"})
+
+intersectionNavObserver.observe(header!)

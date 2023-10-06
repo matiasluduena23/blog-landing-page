@@ -5,7 +5,7 @@ import logo from '../../assets/logo.svg';
 import hamburger from '../../assets/icon-hamburger.svg';
 ---
 
-<nav>
+<nav class="nav">
     <div class="container flex">
         <a class="logo" href="/" aria-label="Go to homepage">
             <Image src={logo} alt="logo" />
@@ -26,13 +26,24 @@ import hamburger from '../../assets/icon-hamburger.svg';
 
 <style>
     nav {
-        padding-block: 2.5rem;
-        position: relative;
+        padding-block: 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-scrolled {
+        background-color: var(--red-clr);
+        box-shadow: 4px -3px 17px 0px rgba(255, 82, 93, 0.9);
     }
 
     .flex {
         justify-content: start;
         gap: 3rem;
+        position: relative;
     }
 
     .list {

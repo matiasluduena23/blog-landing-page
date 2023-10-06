@@ -8,7 +8,7 @@
 }
 
 :root {
-  --red-clr: hsl(356, 100%, 66%,);
+  --red-clr: hsl(356, 100%, 66%);
   --light-red-clr: hsl(355, 100%, 74%, 0.7);
   --blue-clr: hsl(208, 49%, 24%);
 
@@ -40,6 +40,7 @@ body {
 
 a {
   text-decoration: none;
+  font-family: var(--ff-2);
 }
 
 a, button {
